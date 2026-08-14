@@ -9,7 +9,7 @@ not just what the groceries cost.
 ```bash
 npm install
 npm run dev      # http://localhost:5173
-npm test         # optimizer + catalog test suites
+npm test         # optimiser + catalog test suites
 npm run build    # production build into dist/
 ```
 

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Check, RotateCcw, ShoppingBasket } from 'lucide-react';
-import { loadCatalog, type Catalog } from '../lib/catalog';
-import { AddressStep } from '../components/AddressStep';
-import { BasketStep } from '../components/BasketStep';
-import { ResultsStep, type BasketLine, type LocationPoint } from '../components/ResultsStep';
+import { loadCatalog, type Catalog } from './lib/catalog';
+import { AddressStep } from './components/AddressStep';
+import { BasketStep } from './components/BasketStep';
+import { ResultsStep, type BasketLine, type LocationPoint } from './components/ResultsStep';
 
 type Stage = 'address' | 'basket' | 'results';
 
