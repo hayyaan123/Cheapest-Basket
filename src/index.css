@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* Design tokens. Every colour in the app comes from here, so the palette
+   can be adjusted in one place rather than hunted through components. */
+@theme {
+  --color-background: #f4f2ec;
+  --color-foreground: #23261f;
+  --color-card: #fdfcf9;
+  --color-muted: #eae7dd;
+  --color-muted-foreground: #6f7267;
+  --color-border: #e0ddd2;
+
+  --color-primary: #2f6b4f;
+  --color-primary-foreground: #f6f8f3;
+  --color-secondary: #f0dfbf;
+  --color-secondary-foreground: #2f6b4f;
+  --color-accent: #d2694a;
+  --color-destructive: #b4453a;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono-app: "DM Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: var(--font-display); }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-mono-app { font-family: var(--font-mono-app); }
+
+  /* Keyboard focus must stay visible; several controls here are custom. */
+  .focus-ring:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .step-number {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    font-family: var(--font-mono-app);
+    font-size: 0.75rem;
+  }
+
+  .market-rule {
+    height: 0;
+    border-top: 1.5px dashed var(--color-border);
+  }
+
+  .rise-in { animation: rise-in 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both; }
+  .rise-in-delay-1 { animation-delay: 0.08s; }
+  .rise-in-delay-2 { animation-delay: 0.16s; }
+
+  @keyframes rise-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Anyone who has asked their system to reduce motion gets no animation. */
+  @media (prefers-reduced-motion: reduce) {
+    .rise-in { animation: none; }
+    * { transition-duration: 0.01ms !important; }
+  }
+}
