@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/addressstep.tsx","./src/components/basketstep.tsx","./src/components/resultsstep.tsx","./src/lib/catalog.ts","./src/lib/catalog_test.ts","./src/lib/geocode.ts","./src/lib/optimiser.ts","./src/lib/optimiser_test.ts","./vite.config.ts"],"version":"5.9.3"}
