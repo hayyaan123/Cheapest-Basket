@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test": "tsx src/lib/optimizer.test.ts && tsx src/lib/catalog.test.ts"
+    "test": "tsx src/lib/optimiser_test.ts && tsx src/lib/catalog_test.ts"
   },
   "dependencies": {
     "lucide-react": "^0.454.0",
