@@ -13,8 +13,7 @@ npm test         # optimiser + catalog test suites
 npm run build    # production build into dist/
 ```
 
-`public/data.json` currently holds **sample data** so the app runs out of the
-box. Replace it with the output of the Python pipeline before submitting.
+`public/data.json` currently the output of the Python pipeline.
 
 ## Getting the real data
 
@@ -28,7 +27,7 @@ The Python scripts live outside this app. Run them in order:
 3. `validate_geocoding.py` — checks for coordinates outside Malaysia,
    duplicates, and per-state outliers.
 4. `export_data.py` — filters to shops with trustworthy coordinates and writes
-   `data.json`. Copy that into `public/`.
+   `data.json`. Copied into `public/`.
 
 ## Structure
 

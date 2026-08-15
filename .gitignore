@@ -1,0 +1,64 @@
+# ---------- Node / Vite ----------
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+
+# ---------- Python pipeline ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.Python
+*.egg-info/
+
+# ---------- Generated data ----------
+# Regenerable by re-running the pipeline, and too large to be worth
+# versioning. Anyone cloning this repo runs the scripts in README order
+# to recreate them.
+*.parquet
+full_dataset.parquet
+latest_prices.parquet
+prices.parquet
+premises.parquet
+items.parquet
+excluded_premises.csv
+
+# EXCEPTION: public/data.json IS committed on purpose.
+# The deployed app loads it at runtime, so leaving it out means a live
+# site with no prices. It is a few MB, which git handles fine.
+!public/data.json
+
+# The geocoding cache is the one generated file worth keeping: it takes
+# ~40 minutes of rate-limited Nominatim calls to rebuild, and losing it
+# means re-running that from scratch. 
+!geocoded_premises.parquet
+
+# ---------- Editors ----------
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ---------- OS ----------
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# ---------- Secrets ----------
+.env
+.env.local
+.env.*.local
+
+# ---------- Logs ----------
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
