@@ -117,6 +117,24 @@ def district_centroid(district: str, state: str) -> tuple[float, float] | None:
 
 
 def geocode_premise(row) -> dict:
+    """
+    Geocode a premise using its address, premise name, or district centroid.
+
+    The function first attempts to geocode the cleaned address with the
+    district and normalized state. If that fails, it retries using only the
+    cleaned address. If no address match is found, it attempts to geocode
+    the premise name. As a final fallback, it uses the centroid of the
+    district.
+
+    Args:
+        row: A row containing the premise address, state, district, and
+            premise name.
+
+    Returns:
+        dict: A dictionary containing latitude (`lat`), longitude (`lng`),
+            and the precision of the geocoding result. Precision can be
+            `address`, `name`, `district`, or `failed`.
+    """
     addr = clean_address(row.address)
     state = norm_state(row.state)
 
