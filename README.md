@@ -13,13 +13,13 @@ npm test         # optimiser + catalog test suites
 npm run build    # production build into dist/
 ```
 
-`public/data.json` currently the output of the Python pipeline.
+`public/data.json` currently holds the output of the Python pipeline.
 
 ## Getting the real data
 
 The Python scripts live outside this app. Run them in order:
 
-1. `build_clean_dataset.py` — downloads KPDN PriceCatcher, joins the item and
+1. `build_clean_dataset.py` - downloads KPDN PriceCatcher, joins the item and
    premise lookup tables, cleans text, drops unnamed items, and keeps the
    latest price per (shop, item). Writes `prices/premises/items.parquet`.
 2. `geocode_premises.py` — resolves shop addresses to coordinates via
