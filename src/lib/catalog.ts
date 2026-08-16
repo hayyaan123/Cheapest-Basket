@@ -2,7 +2,7 @@
  * Loads data.json and builds the lookups the optimizer needs.
  *
  * The optimizer runs over every pair of candidate shops, and for each pair
- * over every basket item. With ~650 shops that is a lot of price lookups,
+ * over every basket item. With 650 shops that is a lot of price lookups,
  * so scanning the flat `prices` array each time would be far too slow.
  * Everything here exists to make `priceOf(shop, item)` an O(1) Map hit.
  *
