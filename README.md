@@ -15,6 +15,10 @@ npm run build    # production build into dist/
 
 `public/data.json` currently holds the output of the Python pipeline.
 
+## WebApp Vercel Link
+
+https://cheapest-basket.vercel.app/
+
 ## Getting the real data
 
 The Python scripts live outside this app. Run them in order:
